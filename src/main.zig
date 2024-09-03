@@ -10,8 +10,8 @@ const TK1_MMIO_TK1_LED_R_BIT: usize    = 2;
 const TK1_MMIO_TK1_LED_G_BIT: usize    = 1;
 const TK1_MMIO_TK1_LED_B_BIT: usize    = 0;
 
-const uart_buf_reg = @intToPtr(*volatile u8, UartTxData);
-const call_led = @intToPtr(*volatile u8, LED);
+const uart_buf_reg: *i32 = @ptrFromInt(UartTxData);
+const call_led: *i32 = @ptrFromInt(LED);
 
 
 fn sleep(x: usize) void {
